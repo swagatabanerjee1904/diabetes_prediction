@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-left">
+      Swagata Banerjee
+    </div>
+    <div class="header-center">
+      Diabetes Prediction
+    </div>
+    <div class="header-right">
+      <a href="https://github.com/swagatabanerjee1904" target="_blank">
+        <img src="static/images/github logo.png" alt="GitHub" width="30" height="30">
+      </a>
+      <a href="https://www.linkedin.com/in/swagata-banerjee-7b0a0b209/" target="_blank">
+        <img src="static/images/linkedin logo.png" alt="LinkedIn" width="30" height="30">
+      </a>
+    </div>
+  </div>
+
+  <div class="login">
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+      <table class="form-table">
+        <tr>
+          <th><label for="pregnancies">Pregnancies</label></th>
+          <td><input type="text" id="pregnancies" name="Pregnancies" required></td>
+        </tr>
+        <tr>
+          <th><label for="glucose">Glucose</label></th>
+          <td><input type="text" id="glucose" name="Glucose" required></td>
+        </tr>
+        <tr>
+          <th><label for="blood-pressure">Blood Pressure</label></th>
+          <td><input type="text" id="blood-pressure" name="BloodPressure" required></td>
+        </tr>
+        <tr>
+          <th><label for="skin-thickness">Skin Thickness</label></th>
+          <td><input type="text" id="skin-thickness" name="SkinThickness" required></td>
+        </tr>
+        <tr>
+          <th><label for="insulin">Insulin</label></th>
+          <td><input type="text" id="insulin" name="Insulin" required></td>
+        </tr>
+        <tr>
+          <th><label for="bmi">BMI</label></th>
+          <td><input type="text" id="bmi" name="BMI" required></td>
+        </tr>
+        <tr>
+          <th><label for="dpf">Diabetes Pedigree Function</label></th>
+          <td><input type="text" id="dpf" name="DiabetesPedigreeFunction" required></td>
+        </tr>
+        <tr>
+          <th><label for="age">Age</label></th>
+          <td><input type="text" id="age" name="Age" required></td>
+        </tr>
+        <tr>
+          <th><label for="result">Result</label></th>
+          <td><input type="text" id="result" name="result" readonly value="Person is : {{result}}"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="submit">Predict</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+</html>
